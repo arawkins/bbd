@@ -69,6 +69,11 @@ class BBGameService extends ActivityDelegate {
 	public void onActivityResult( int requestCode,int resultCode,Intent data ){
 		super.onActivityResult(requestCode, resultCode, data);
 		mHelper.onActivityResult(requestCode, resultCode, data);
+		// check for "inconsistent state"
+		if ( resultCode == GamesActivityResultCodes.RESULT_RECONNECT_REQUIRED && (requestCode == REQUEST_LEADERBOARD || requestCode == REQUEST_ACHIEVEMENTS) )  {  
+		   // force a disconnect to sync up state, ensuring that mClient reports "not connected"
+		   mHelper.getApiClient().disconnect();
+		}
 	}
 	
 	public boolean isNetworkAvailable() {
