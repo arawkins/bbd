@@ -19,10 +19,30 @@ BBGameService.prototype.isNetworkAvailable = function() {
     return true;
 }
 
-BBGameService.prototype.showLeaderBoard = function() {
+BBGameService.prototype.showLeaderBoard = function(id) {
     return false;
 }
 
 BBGameService.prototype.showAllLeaderBoards = function() {
     return false;
+}
+
+BBGameService.prototype.setMaxUserSignIns = function(count) {
+    return;
+}
+
+BBGameService.prototype.unlockAchievement = function(id) {
+    return;
+}
+
+BBGameService.prototype.revealAchievement = function(id) {
+    return;
+}
+
+BBGameService.prototype.incrementAchievement = function(id, steps) {
+    return;
+}
+
+BBGameService.prototype.showAchievements = function() {
+    return;
 }
