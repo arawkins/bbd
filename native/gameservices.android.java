@@ -152,4 +152,9 @@ class BBGameService extends ActivityDelegate {
 		mHelper.setMaxAutoSignInAttempts(count);
 	}
 
+	public void renderSignInButton() {
+		// not used on Android Target
+		return;
+	}
+
 }

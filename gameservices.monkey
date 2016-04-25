@@ -25,7 +25,6 @@
 
 #ElseIf TARGET = "html5"
 	Import "native/gameservices.html5.js"
-
 #Else
 	#Error "Google Play Game Services currently only available for android"
 #Endif
@@ -39,10 +38,12 @@ Class GameService Extends Null="BBGameService"
 	Method signOut:Void()
 	Method setMaxUserSignIns:Void(count:Int)
 	Method showLeaderBoard:Void(id:String)
+	Method getLeaderBoard:String(id:String)
 	Method showAllLeaderBoards:Void()
 	Method unlockAchievement:Void(id:String)
 	Method revealAchievement:Void(id:String)
 	Method incrementAchievement:Void(id:String, steps:Int)
 	Method showAchievements:Void()
 	Method isNetworkAvailable:Bool()
+	Method renderSignInButton:Void()
 End
