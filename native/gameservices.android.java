@@ -24,7 +24,7 @@ class BBGameService extends ActivityDelegate {
 	class GameServiceThread extends Thread{
 
 		GameServiceThread(){
-			_running=true;	
+			_running=true;
 		}
 
 		public void run(){
@@ -65,12 +65,12 @@ class BBGameService extends ActivityDelegate {
 		mHelper.onStop();
     }
 
-	@Override	
+	@Override
 	public void onActivityResult( int requestCode,int resultCode,Intent data ){
 		super.onActivityResult(requestCode, resultCode, data);
 		mHelper.onActivityResult(requestCode, resultCode, data);
 	}
-	
+
 	public boolean isNetworkAvailable() {
         ConnectivityManager cm = (ConnectivityManager) _activity.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -80,7 +80,7 @@ class BBGameService extends ActivityDelegate {
         } else {
             return false;
         }
-    } 
+    }
 
 	public BBGameService(){
 
@@ -124,6 +124,10 @@ class BBGameService extends ActivityDelegate {
 
 	public void showLeaderBoard(String id) {
 		_activity.startActivityForResult(Games.Leaderboards.getLeaderboardIntent(mHelper.getApiClient(), id), REQUEST_LEADERBOARD);
+	}
+
+	public void showAllLeaderBoards() {
+		_activity.startActivityForResult(Games.Leaderboards.getAllLeaderboardsIntent(mHelper.getApiClient()), REQUEST_LEADERBOARD);
 	}
 
 	public void showAchievements() {
